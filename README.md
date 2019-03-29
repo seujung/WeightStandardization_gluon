@@ -24,4 +24,4 @@ You will be surprised by how well it performs.
 
  
 ## Reference
-[Original Code](https://arxiv.org/abs/1903.10520) 
+[Original Repo](https://github.com/joe-siyuan-qiao/WeightStandardization) 
