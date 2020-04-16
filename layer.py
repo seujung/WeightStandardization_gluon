@@ -15,6 +15,6 @@ class Conv2D(nn.Conv2D):
         weight_mean = F.mean(weight, axis=(1, 2, 3), keepdims=True)
         weight_sub = F.broadcast_sub(weight, weight_mean)
         weight_std = F.square(weight_sub)
-        std = F.sqrt(F.mean(weight_std, axis=(1), keepdims=True)) + 1e-5
+        std = F.sqrt(F.mean(weight_std, axis=(1, 2, 3), keepdims=True)) + 1e-5
         F.broadcast_div(weight_sub, std, out=weight)
         return super().hybrid_forward(F, x, weight=weight, bias=bias)
